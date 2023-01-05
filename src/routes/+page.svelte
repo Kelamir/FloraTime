@@ -13,6 +13,7 @@
         <InProgressMenu />
     {:else if $isFinished}
         <FinishMenu />
+        <SetDuration />
     {/if}
     <StartStopButton />
 </div>
