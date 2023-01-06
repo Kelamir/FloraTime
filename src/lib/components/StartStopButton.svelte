@@ -1,9 +1,18 @@
 <script>
-    import {isStarted} from "../../stores.js";
+    import {isStarted, isTimeToResetInterval} from "../../stores.ts";
 
+    function handleClick() {
+       if ($isStarted) {
+           $isStarted = false;
+           $isTimeToResetInterval = true;
+       } else {
+           $isStarted = true;
+       }
+
+    }
 </script>
 
-<button on:click={() => isStarted.set(!$isStarted)}>
+<button on:click={handleClick}>
     {#if $isStarted}
         Stop
     {:else}

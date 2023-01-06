@@ -1,10 +1,10 @@
 <script>
-    import {inputMinutes, isFinished, isStarted} from "../../stores.js";
+  import { inputMinutes, isFinished, isStarted, isTimeToResetInterval } from "../../stores.ts";
 
     let startTime = Date.now() / 1000; // in seconds
     $: endTime = startTime + ($inputMinutes * 60);
-    let minutes;
-    let seconds;
+    let minutes = 0;
+    let seconds = 0;
     let timeRemaining;
     const interval = setInterval(() => {
         const current = Date.now() / 1000;
@@ -15,6 +15,8 @@
           clearInterval(interval)
           $isFinished = true;
           $isStarted = false;
+        } else if ($isTimeToResetInterval) {
+          clearInterval(interval)
         }
     }, 1000)
 
