@@ -1,5 +1,5 @@
 <script>
-  import { inputMinutes, isFinished, isStarted, isTimeToResetInterval } from "../../stores.ts";
+  import { inputMinutes, timerState, timerStates } from "../../stores.ts";
 
     let startTime = Date.now() / 1000; // in seconds
     $: endTime = startTime + ($inputMinutes * 60);
@@ -13,10 +13,7 @@
         seconds = Math.floor(timeRemaining % 60);
         if (timeRemaining < 0) {
           clearInterval(interval)
-          $isFinished = true;
-          $isStarted = false;
-        } else if ($isTimeToResetInterval) {
-          clearInterval(interval)
+          $timerState = timerStates.Finished;
         }
     }, 1000)
 

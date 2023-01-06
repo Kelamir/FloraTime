@@ -1,19 +1,30 @@
 <script>
-    import {isStarted, isTimeToResetInterval} from "../../stores.ts";
+    import { timerState, timerStates } from "../../stores.ts";
 
     function handleClick() {
-       if ($isStarted) {
-           $isStarted = false;
-           $isTimeToResetInterval = true;
-       } else {
-           $isStarted = true;
-       }
+       // if ($timerState === timerStates.NotStarted) {
+       //     $timerState = timerStates.Started;
+       // } else if ($timerState === timerStates.Started) {
+       //     $timerState = timerStates.Finished;
+       // } else {
+       //     $timerState = timerStates.NotStarted;
+       //
+        switch ($timerState) {
+            case timerStates.NotStarted:
+                $timerState = timerStates.Started;
+                break;
+            case timerStates.Started:
+                $timerState = timerStates.Finished;
+                break;
+            case timerStates.Finished:
+                $timerState = timerStates.NotStarted;
+        }
 
     }
 </script>
 
 <button on:click={handleClick}>
-    {#if $isStarted}
+    {#if $timerState === timerStates.Started}
         Stop
     {:else}
         Start
