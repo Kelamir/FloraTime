@@ -27,9 +27,10 @@ test("pomodoro has been started message is visible", async ({ page }) => {
   expect(await page.textContent("p")).toBe("Pomodoro has been started.");
 });
 
-test("adjusts time", async ({ page }) => {
+test("input number field adjusts time", async ({ page }) => {
   await page.goto("http://localhost:5173");
-  const locator = page.locator('input[type=number]');
-  await expect(locator).toHaveValue(/[0-240]/);
-
+  const locator = page.locator("input[type=number]");
+  await locator.fill("25");
+  await expect(locator).toHaveValue("25");
 });
+
