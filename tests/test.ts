@@ -27,7 +27,9 @@ test("pomodoro has been started message is visible", async ({ page }) => {
   expect(await page.textContent("p")).toBe("Pomodoro has been started.");
 });
 
-test("slider exists and adjusts time", async ({ page }) => {
+test("adjusts time", async ({ page }) => {
   await page.goto("http://localhost:5173");
-  expect(await page.textContent("p")).toBe("Pomodoro has been started.");
+  const locator = page.locator('input[type=number]');
+  await expect(locator).toHaveValue(/[0-240]/);
+
 });
