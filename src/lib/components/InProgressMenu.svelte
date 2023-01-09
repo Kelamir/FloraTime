@@ -3,9 +3,7 @@
 
   let startTime = Date.now() / 1000; // in seconds
   $: endTime = startTime + ($inputMinutes * 60);
-  let minutes = 0;
-  let seconds = 0;
-  let timeRemaining;
+  let minutes = 0, seconds = 0, timeRemaining;
 
   function performCountdown() {
     const interval = setInterval(() => {
@@ -13,14 +11,19 @@
       timeRemaining = endTime - current;
       minutes = Math.floor(timeRemaining / 60);
       seconds = Math.floor(timeRemaining % 60);
-      if (timeRemaining < 0) {
-        clearInterval(interval);
-        $timerState = timerStates.Finished;
-      }
-      if ($timerState === timerStates.Finished) {
-        clearInterval(interval);
-      }
+      takeCareOfInterval(interval);
     }, 1000);
+
+  }
+
+  function takeCareOfInterval(interval) {
+    if (timeRemaining < 0) {
+      clearInterval(interval);
+      $timerState = timerStates.Finished;
+    }
+    if ($timerState === timerStates.Finished) {
+      clearInterval(interval);
+    }
   }
 
   performCountdown();
