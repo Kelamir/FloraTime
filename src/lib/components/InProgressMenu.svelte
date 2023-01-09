@@ -12,8 +12,11 @@
         minutes = Math.floor(timeRemaining / 60);
         seconds = Math.floor(timeRemaining % 60);
         if (timeRemaining < 0) {
-          clearInterval(interval)
+          clearInterval(interval);
           $timerState = timerStates.Finished;
+        }
+        if ($timerState === timerStates.Finished) {
+          clearInterval(interval);
         }
     }, 1000)
 
