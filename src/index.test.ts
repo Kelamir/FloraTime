@@ -13,6 +13,8 @@ describe('sum test', () => {
 test.each([
 	[1500, "25:00"],
 	[1234567, "20576:07"],
+	[60, "1:00"],
+	[3600, "60:00"],
 ])('add(%i) -> %i', (num, expected) => {
 	expect(formatTimeRemaining(num)).toBe(expected)
 })
@@ -20,9 +22,9 @@ test.each([
 test.each([
 	[25, false],
 	[-1, true],
+	[0, true],
 ])('shouldFinish(%i) -> %i', (num, expected) => {
 	expect(shouldFinish(num)).toBe(expected)
 })
 
-
-
+test.todo('test nextState')
