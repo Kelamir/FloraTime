@@ -34,3 +34,10 @@ test("input number field adjusts time", async ({ page }) => {
   await expect(locator).toHaveValue("25");
 });
 
+test("stop pomodoro timer", async ({ page }) => {
+  await page.goto("http://localhost:5173");
+  await page.getByRole("button", { name: "Start" }).click();
+  await page.getByRole("button", { name: "Stop" }).click();
+  expect(await page.textContent("p")).toBe("Pomodoro has been finished.");
+
+});
