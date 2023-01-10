@@ -5,7 +5,7 @@
   $: endTime = startTime + ($inputMinutes * 60);
   let minutes = 0, seconds = 0, timeRemaining;
 
-  function performCountdown() {
+  function performCountdown(startTime, endTime, minutes, seconds, timeRemaining) {
     const interval = setInterval(() => {
       const current = Date.now() / 1000;
       timeRemaining = endTime - current;
@@ -26,7 +26,7 @@
     }
   }
 
-  performCountdown();
+  performCountdown(startTime, endTime, minutes, seconds, timeRemaining);
 </script>
 
 <p>Pomodoro has been started.</p>
