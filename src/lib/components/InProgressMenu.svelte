@@ -1,33 +1,23 @@
 <script>
-  import { inputMinutes, timerState, timerStates } from "../../stores.ts";
+  import { inputMinutes, timerState } from "../../stores";
+	import { TimerState } from "../types";
+	import { formatTimeRemaining, nextState, shouldFinish } from "../utils/countdown";
 
   let startTime = Date.now() / 1000; // in seconds
-  $: endTime = startTime + ($inputMinutes * 60);
-  let minutes = 0, seconds = 0, timeRemaining;
+  let endTime = startTime + ($inputMinutes * 60);
+  let timeRemaining = endTime - startTime;
 
-  function performCountdown(startTime, endTime, minutes, seconds, timeRemaining) {
-    const interval = setInterval(() => {
-      const current = Date.now() / 1000;
-      timeRemaining = endTime - current;
-      minutes = Math.floor(timeRemaining / 60);
-      seconds = Math.floor(timeRemaining % 60);
-      takeCareOfInterval(interval);
-    }, 1000);
-
-  }
-
-  function takeCareOfInterval(interval) {
-    if (timeRemaining < 0) {
-      clearInterval(interval);
-      $timerState = timerStates.Finished;
+  const interval = setInterval(() => {
+    const current = Date.now() / 1000;
+    timeRemaining = endTime - current;
+    if(shouldFinish(timeRemaining)) {
+      $timerState = nextState($timerState);
     }
-    if ($timerState === timerStates.Finished) {
+    if ($timerState === TimerState.Finished) {
       clearInterval(interval);
     }
-  }
-
-  performCountdown(startTime, endTime, minutes, seconds, timeRemaining);
+  }, 1000);
 </script>
 
 <p>Pomodoro has been started.</p>
-<p>Time left: {minutes}m:{seconds}s</p>
+<p>Time left: {formatTimeRemaining(timeRemaining)}</p>

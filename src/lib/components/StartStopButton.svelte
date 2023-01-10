@@ -1,23 +1,23 @@
 <script>
-  import { timerState, timerStates } from "../../stores.ts";
+	import { TimerState } from "$lib/types";
+  import { timerState } from "../../stores.ts";
 
   function handleClick() {
     switch ($timerState) {
-      case timerStates.NotStarted:
-        $timerState = timerStates.Started;
+      case TimerState.NotStarted:
+        $timerState = TimerState.Started;
         break;
-      case timerStates.Started:
-        $timerState = timerStates.Finished;
+      case TimerState.Started:
+        $timerState = TimerState.Finished;
         break;
-      case timerStates.Finished:
-        $timerState = timerStates.Started;
+      case TimerState.Finished:
+        $timerState = TimerState.Started;
     }
-
   }
 </script>
 
 <button on:click={handleClick}>
-  {#if $timerState === timerStates.Started}
+  {#if $timerState === TimerState.Started}
     Stop
   {:else}
     Start

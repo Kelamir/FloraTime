@@ -3,14 +3,15 @@
   import SetDuration from "../lib/components/SetDuration.svelte";
   import InProgressMenu from "../lib/components/InProgressMenu.svelte";
   import FinishMenu from "../lib/components/FinishMenu.svelte";
-  import { timerState, timerStates } from "../stores.ts";
+  import { timerState } from "../stores.ts";
+	import { TimerState } from "$lib/types";
 </script>
 
 <div>
   <hr>
-  {#if $timerState === timerStates.Started}
+  {#if $timerState === TimerState.Started}
     <InProgressMenu />
-  {:else if $timerState === timerStates.Finished}
+  {:else if $timerState === TimerState.Finished}
     <FinishMenu />
     <SetDuration />
   {:else}
