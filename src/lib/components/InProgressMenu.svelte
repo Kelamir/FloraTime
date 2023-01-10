@@ -5,7 +5,7 @@
   $: endTime = startTime + ($inputMinutes * 60);
   let minutes = 0, seconds = 0, timeRemaining;
 
-  function performCountdown(startTime, endTime, minutes, seconds, timeRemaining) {
+  function performCountdown() {
     const interval = setInterval(() => {
       const current = Date.now() / 1000;
       timeRemaining = endTime - current;
@@ -13,6 +13,7 @@
       seconds = Math.floor(timeRemaining % 60);
       takeCareOfInterval(interval);
     }, 1000);
+    return 5;
 
   }
 
