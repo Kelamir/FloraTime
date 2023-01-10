@@ -1,7 +1,7 @@
 <script>
   import { inputMinutes, timerState } from "../../stores";
-	import { TimerState } from "../types";
 	import { formatTimeRemaining, nextState, shouldFinish } from "../utils/countdown";
+  import { onDestroy } from "svelte";
 
   let startTime = Date.now() / 1000; // in seconds
   let endTime = startTime + ($inputMinutes * 60);
@@ -13,10 +13,9 @@
     if(shouldFinish(timeRemaining)) {
       $timerState = nextState($timerState);
     }
-    if ($timerState === TimerState.Finished) {
-      clearInterval(interval);
-    }
   }, 1000);
+
+  onDestroy(() => clearInterval(interval))
 </script>
 
 <p>Pomodoro has been started.</p>
