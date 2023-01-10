@@ -15,5 +15,5 @@ export function nextState(timerState:TimerStateType): TimerStateType {
 export function formatTimeRemaining(timeRemaining: number) {
     const minutes = Math.floor(timeRemaining / 60);
     const seconds = Math.floor(timeRemaining % 60);
-    return `${minutes}:${seconds}`;
+    return `${minutes}:${seconds == 0 ? "00" : seconds}`;
 }
