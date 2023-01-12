@@ -125,7 +125,7 @@ export async function handleCallback(request: RequestEvent): Promise<Response> {
 
   const token = await exchangeCodeForToken(request)
 
-  const user = await parseUser(token)
+  const user = JSON.stringify(await parseUser(token))
   console.log('user', user)
 
   //return new Response(JSON.stringify(token, null, 2))
@@ -135,12 +135,18 @@ export async function handleCallback(request: RequestEvent): Promise<Response> {
     maxAge: token.expires_in,
     path: '/',
   })
+
+  const userCookie = cookie.serialize('userToken', user, {
+    secure: true,
+    maxAge: token.expires_in,
+    path: '/',
+  })
   //res.headers.append('Set-Cookie', authCookie)
   const res = new Response(null, {
     status: 302,
     headers: {
       Location: redirectUrl.toString(),
-      'Set-Cookie': authCookie,
+      'Set-Cookie': [authCookie, userCookie]
     },
   })
   return res
