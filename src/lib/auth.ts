@@ -120,13 +120,16 @@ export function handleRedirect(
 
 export async function handleCallback(request: RequestEvent): Promise<Response> {
   const redirectUrl = new URL(request.url)
-  redirectUrl.pathname = '/app'
+  redirectUrl.pathname = '/'
   redirectUrl.searchParams.delete('code')
 
   const token = await exchangeCodeForToken(request)
 
   const user = JSON.stringify(await parseUser(token))
   console.log('user', user)
+  const userPicture = JSON.parse(user)
+  console.log(userPicture)
+  console.log("Test")
 
   //return new Response(JSON.stringify(token, null, 2))
   //const res = Response.redirect(redirectUrl.toString(), 302)
