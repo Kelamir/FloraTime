@@ -2,8 +2,8 @@
 
 <nav>
   <a href="/">Home</a>
-  <a href="/api/auth/signup">Login</a>
-  <a href="/api/auth/login">Sign up</a>
+  <a href="/api/auth/signup">Sign up</a>
+  <a href="/api/auth/login">Login</a>
 </nav>
 
 <slot />
