@@ -1,11 +1,6 @@
 <script>
 
-  export const load = (async ({ cookies }) => {
-    const userToken = cookies.get('userToken');
-    const url = JSON.parse(userToken).pictureUrl;
-
-    return console.log("usercookie: ", userToken)
-  })
+  export let data;
 
 </script>
 
@@ -17,7 +12,9 @@
   <a href="/api/auth/login">Login</a>
 </nav>
 
-<img src={JSON.stringify("url goes here")} alt="personal avatar" />
+
+
+<img src={data.user.pictureUrl} alt="personal avatar" />
 
 
 <slot />
