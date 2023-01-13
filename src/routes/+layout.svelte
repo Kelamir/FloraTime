@@ -13,8 +13,10 @@
 </nav>
 
 
+{#if data.user}
+  <img src={data.user.pictureUrl} alt="personal avatar" />
+{/if}
 
-<img src={data.user.pictureUrl} alt="personal avatar" />
 
 
 <slot />
