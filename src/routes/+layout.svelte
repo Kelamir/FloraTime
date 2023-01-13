@@ -9,7 +9,8 @@
 <nav>
   <a href="/">Home</a>
   <a href="/api/auth/signup">Sign up</a>
-  <a href="/api/auth/login">Login</a>
+  <a href="/api/auth/login">Log in</a>
+  <a href="/api/auth/logout">Log out</a>
 </nav>
 
 

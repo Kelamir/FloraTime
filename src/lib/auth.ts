@@ -113,7 +113,10 @@ export function handleRedirect(
     audience: `${env.AUTH0_AUDIENCE}`,
     screen_hint,
   }).toString()
-  const redirectUrl = `https://${env.AUTH0_DOMAIN}/authorize?${queryString}`
+  // if logout, i want it to say logout instead of authorize
+  const isLogout = screen_hint === "logout" ? "logout" : "authorize"
+  const redirectUrl = `https://${env.AUTH0_DOMAIN}/${isLogout}?${queryString}`
+
 
   return Response.redirect(redirectUrl, 302)
 }
@@ -126,10 +129,6 @@ export async function handleCallback(request: RequestEvent): Promise<Response> {
   const token = await exchangeCodeForToken(request)
 
   const user = JSON.stringify(await parseUser(token))
-  console.log('user', user)
-  const userPicture = JSON.parse(user)
-  console.log(userPicture)
-  console.log("Test")
 
   //return new Response(JSON.stringify(token, null, 2))
   //const res = Response.redirect(redirectUrl.toString(), 302)
