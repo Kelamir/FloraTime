@@ -113,10 +113,20 @@ export function handleRedirect(
     audience: `${env.AUTH0_AUDIENCE}`,
     screen_hint,
   }).toString()
-  // if logout, i want it to say logout instead of authorize
-  const isLogout = screen_hint === "logout" ? "logout" : "authorize"
-  const redirectUrl = `https://${env.AUTH0_DOMAIN}/${isLogout}?${queryString}`
+  const redirectUrl = `https://${env.AUTH0_DOMAIN}/authorize?${queryString}`
 
+  return Response.redirect(redirectUrl, 302)
+}
+
+export function handleLogoutRedirect(request: Request): Response {
+  const returnUrl = new URL(request.url)
+  returnUrl.pathname = "/"
+
+  const queryString = new URLSearchParams({
+    client_id: `${env.AUTH0_CLIENT_ID}`,
+    returnTo: `${returnUrl.toString()}`,
+  }).toString()
+  const redirectUrl = `https://${env.AUTH0_DOMAIN}/v2/logout?${queryString}`
 
   return Response.redirect(redirectUrl, 302)
 }
