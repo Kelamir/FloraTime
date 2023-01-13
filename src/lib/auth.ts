@@ -118,7 +118,7 @@ export function handleRedirect(
   return Response.redirect(redirectUrl, 302)
 }
 
-export function handleLogoutRedirect(request: Request): Response {
+export function handleLogoutRedirect(request: RequestEvent): Response {
   const returnUrl = new URL(request.url)
   returnUrl.pathname = "/"
 
