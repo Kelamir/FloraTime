@@ -4,6 +4,9 @@
   import "../app.css";
   export let data;
 
+  console.log(data.user)
+
+
 </script>
 
 
@@ -11,9 +14,12 @@
 
 <div class="flex py-5">
   <a class="border bg-gray-300" href="/">Home</a>
-  <a class="border bg-gray-300" href="/api/auth/signup">Sign up</a>
-  <a class="border bg-gray-300" href="/api/auth/login">Log in</a>
-  <a class="border bg-gray-300 on:click={removeCookies}" href="/api/auth/logout">Log out</a>
+  {#if data.user}
+    <a class="border bg-gray-300" on:click={removeCookies} href="/api/auth/logout">Log out</a>
+  {:else}
+    <a class="border bg-gray-300" href="/api/auth/signup">Sign up</a>
+    <a class="border bg-gray-300" href="/api/auth/login">Log in</a>
+  {/if}
 </div>
 
 
