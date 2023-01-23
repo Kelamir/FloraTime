@@ -1,7 +1,7 @@
 <script>
 
   import { removeCookies } from "../lib/utils/cookies.ts";
-
+  import "../app.css";
   export let data;
 
 </script>
