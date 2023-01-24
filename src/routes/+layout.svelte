@@ -2,7 +2,6 @@
 
   import { removeCookies } from "../lib/utils/cookies";
   import "../app.css";
-	import Button from "$lib/components/ui/Button.svelte";
   export let data;
 
 </script>

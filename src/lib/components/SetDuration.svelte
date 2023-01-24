@@ -1,8 +1,8 @@
 <script>
-  import { inputMinutes } from "../../stores.ts";
+  import { inputMinutes } from "../../stores";
+  import "../../../src/app.css";
 </script>
 
 
+<p class="text-8xl text-[#ffffff]">{$inputMinutes}</p>
 <input type="range" bind:value={$inputMinutes} min="5" max="240" step="5">
-<input type="number" bind:value={$inputMinutes} min="5" max="240" step="5">
-<p>Set duration: {$inputMinutes}</p>
