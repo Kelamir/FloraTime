@@ -2,6 +2,7 @@
 
   import { removeCookies } from "../lib/utils/cookies.ts";
   import "../app.css";
+	import Navbar from "$lib/components/ui/Navbar.svelte";
   export let data;
 
   console.log(data.user)
@@ -9,6 +10,7 @@
 
 </script>
 
+<Navbar />
 
 <h2 class="text-2xl font-bold underline first-letter:text-6xl first-letter:font-bold">Pomodoro timer</h2>
 
@@ -21,6 +23,7 @@
     <a class="border bg-gray-300" href="/api/auth/login">Log in</a>
   {/if}
 </div>
+
 
 
 {#if data.user}
