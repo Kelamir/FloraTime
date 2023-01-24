@@ -16,7 +16,7 @@
   }
 </script>
 
-<button on:click={handleClick} class="bg-white text-red inline-flex items-center rounded border border-transparent px-7 py-1.5 color-red">
+<button on:click={handleClick} class="bg-white text-red inline-flex items-center rounded border border-transparent px-9 py-1.5 color-red">
   {#if $timerState === TimerState.Started}
     Stop
   {:else}
