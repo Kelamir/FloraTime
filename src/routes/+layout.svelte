@@ -2,15 +2,13 @@
 
   import { removeCookies } from "../lib/utils/cookies.ts";
   import "../app.css";
-	import Navbar from "$lib/components/ui/Navbar.svelte";
+	import Button from "$lib/components/ui/Button.svelte";
   export let data;
 
   console.log(data.user)
 
 
 </script>
-
-<Navbar />
 
 <h2 class="text-2xl font-bold underline first-letter:text-6xl first-letter:font-bold">Pomodoro timer</h2>
 
