@@ -18,5 +18,4 @@
   onDestroy(() => clearInterval(interval))
 </script>
 
-<p>Pomodoro has been started.</p>
-<p>Time left: {formatTimeRemaining(timeRemaining)}</p>
+<p class="text-8xl text-[#ffffff]">{formatTimeRemaining(timeRemaining)}</p>

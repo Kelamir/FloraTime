@@ -16,6 +16,7 @@
     <NavbarLink href="/">Home</NavbarLink>
 
     {#if data.user}
+       <!-- TODO make on:click work -->
       <NavbarLink on:click={removeCookies} href="/api/auth/logout">Log out</NavbarLink>
 
     {:else}
