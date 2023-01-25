@@ -4,5 +4,5 @@
 </script>
 
 
-<p class="text-8xl text-[#ffffff]">{$inputMinutes}</p>
+<p class="text-8xl text-[#ffffff]">{$inputMinutes}:00</p>
 <input type="range" bind:value={$inputMinutes} min="5" max="240" step="5">
