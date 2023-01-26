@@ -1,6 +1,7 @@
 <script>
     import NavbarLink from "./Navbarlink.svelte";
     import { removeCookies } from "../../utils/cookies";
+    import "../../../app.css"
     let showMenu = false;
     export let data;
     
@@ -9,7 +10,7 @@
     }
 </script>
 
-<button on:click={toggleMenu}>Open DropDownMenu</button>
+<NavbarLink class="hover:animate-spin" on:click={toggleMenu}>Auth</NavbarLink>
 
 {#if showMenu}
     {#if data.user}
