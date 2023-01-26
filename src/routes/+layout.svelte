@@ -12,13 +12,7 @@
 <div class="flex flex-col items-center">
   <div class="flex py-5 space-x-2">
     <NavbarLink href="/">Home</NavbarLink>
-    {#if data.user}
-      <NavbarLink on:click={removeCookies} href="/api/auth/logout">Log out</NavbarLink>
-    {:else}
-      <NavbarLink href="/api/auth/signup">Sign up</NavbarLink>
-      <NavbarLink href="/api/auth/login">Log in</NavbarLink>
-    {/if}
-      <DropDownMenu />
+      <DropDownMenu data={data}/>
   </div>
 
   {#if data.user}
