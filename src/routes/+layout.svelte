@@ -4,7 +4,7 @@
   import "../app.css";
   export let data;
   import NavbarLink from "../lib/components/ui/Navbarlink.svelte";
-
+  import DropDownMenu from "../lib/components/ui/DropDownMenu.svelte";
 
 </script>
 
@@ -18,6 +18,7 @@
       <NavbarLink href="/api/auth/signup">Sign up</NavbarLink>
       <NavbarLink href="/api/auth/login">Log in</NavbarLink>
     {/if}
+      <DropDownMenu />
   </div>
 
   {#if data.user}
