@@ -3,11 +3,12 @@
   import SetDuration from "../lib/components/SetDuration.svelte";
   import InProgressMenu from "../lib/components/InProgressMenu.svelte";
   import FinishMenu from "../lib/components/FinishMenu.svelte";
-  import { timerState } from "../stores.ts";
+  import { timerState } from "../stores";
 	import { TimerState } from "$lib/types";
+  import "../app.css";
 </script>
 
-<div>
+<div class="flex flex-col items-center">
   <hr>
   {#if $timerState === TimerState.Started}
     <InProgressMenu />
@@ -21,3 +22,4 @@
   <hr>
 
 </div>
+
