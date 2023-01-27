@@ -19,7 +19,6 @@
     <SetDuration />
   {/if}
   <StartStopButton />
-  <hr>
 
 </div>
 

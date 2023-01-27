@@ -11,8 +11,12 @@
 
 <div class="flex flex-col items-center">
   <div class="flex py-5 space-x-2">
-    <NavbarLink href="/">Home</NavbarLink>
+    <div>
+      <NavbarLink href="/">Home</NavbarLink>
+    </div>
+    <div>
       <DropDownMenu data={data}/>
+    </div>
   </div>
 
   {#if data.user}
@@ -22,6 +26,7 @@
   <slot />
 
 </div>
+
 
 <style lang="postcss">
   :global(html) {
