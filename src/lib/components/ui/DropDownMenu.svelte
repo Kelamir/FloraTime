@@ -11,7 +11,7 @@
     }
 </script>
 
-<div class="flex flex-col">
+<div class="flex flex-col cursor-pointer">
   <Navbarlink on:click={toggleMenu}>Auth</Navbarlink>
   {#if showMenu}
       {#if data.user}

@@ -23,13 +23,15 @@
     <img src={data.user.pictureUrl} alt="personal avatar" />
   {/if}
 
-  <slot />
+  <div class="bg-red-500 rounded p-5">
+    <slot />
+  </div>
 
 </div>
 
 
 <style lang="postcss">
   :global(html) {
-    background-color: theme(colors.red.500);
+    background-color: theme(colors.red.600);
   }
 </style>
