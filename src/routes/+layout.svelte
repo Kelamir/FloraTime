@@ -3,6 +3,7 @@
   import { removeCookies } from "../lib/utils/cookies";
   import "../app.css";
   export let data;
+  import Navbar from "../lib/components/ui/Navbar.svelte";
   import NavbarLink from "../lib/components/ui/Navbarlink.svelte";
   import DropDownMenu from "../lib/components/ui/DropDownMenu.svelte";
 
@@ -10,22 +11,7 @@
 
 
 <div class="flex flex-col items-center">
-  <div class="flex py-5 space-x-2">
-    <div>
-      <NavbarLink href="/">Home</NavbarLink>
-    </div>
-
-    <div>
-      <NavbarLink href="/stats">Stats</NavbarLink>
-    </div>
-
-    <div>
-      <NavbarLink href="/settings">Settings</NavbarLink>
-    </div>
-    <div>
-      <DropDownMenu data={data}/>
-    </div>
-  </div>
+  <Navbar data/>
 
   {#if data.user}
     <img src={data.user.pictureUrl} alt="personal avatar" />

@@ -1,0 +1,3 @@
+<a {...$$restProps} on:click class="bg-white  inline-flex items-center rounded border border-transparent px-2 py-1.5">
+    <slot />
+</a>
