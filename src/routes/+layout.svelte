@@ -20,6 +20,9 @@
     </div>
 
     <div>
+      <NavbarLink href="/settings">Settings</NavbarLink>
+    </div>
+    <div>
       <DropDownMenu data={data}/>
     </div>
   </div>
