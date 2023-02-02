@@ -1,11 +1,8 @@
 <script>
 
-  import { removeCookies } from "../lib/utils/cookies";
   import "../app.css";
   export let data;
   import Navbar from "../lib/components/ui/Navbar.svelte";
-  import NavbarLink from "../lib/components/ui/Navbarlink.svelte";
-  import DropDownMenu from "../lib/components/ui/DropDownMenu.svelte";
 
 </script>
 
