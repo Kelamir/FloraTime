@@ -11,7 +11,7 @@
 
 
 <div class="flex flex-col items-center">
-  <Navbar data/>
+  <Navbar data={data}/>
 
   {#if data.user}
     <img src={data.user.pictureUrl} alt="personal avatar" />
