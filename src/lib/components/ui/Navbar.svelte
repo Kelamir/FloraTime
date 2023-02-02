@@ -4,7 +4,7 @@
     export let data;
 </script>
 
-<div class="flex py-5 space-x-2 content-end justify-end">
+<div class="grid py-5 grid-cols-4">
     <div>
         <NavbarLink href="/">Home</NavbarLink>
     </div>
