@@ -23,6 +23,6 @@
 
 <style lang="postcss">
   :global(html) {
-    background-color: theme(colors.red.600);
+    background-color: theme(colors.gray.900);
   }
 </style>
