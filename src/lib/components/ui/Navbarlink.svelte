@@ -1,3 +1,4 @@
-<a {...$$restProps} on:click class="bg-white text-red inline-flex items-center rounded border border-transparent px-9 py-1.5 color-red">
+<a {...$$restProps} on:click class="bg-gray-100 p-2 rounded">
+
     <slot />
 </a>
