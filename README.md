@@ -12,6 +12,6 @@ A pomodoro app that allows you to grow flowers as you get work done.
 Add .env file with the following parameters:
 
     AUTH0_CLIENT_ID=
-    AUTH0_CLIENT_
+    AUTH0_CLIENT=
     AUTH0_DOMAIN=
     AUTH0_AUDIENCE=
