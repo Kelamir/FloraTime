@@ -12,7 +12,7 @@
     <Navbar data={data}/>
   </div>
 
-  <div class="row-start-2 col-start-2 col-span-10 bg-gray-700 p-5 rounded">
+  <div class="row-start-2  bg-gray-700 p-5 rounded col-start-2 col-span-10 sm:col-start-4 sm:col-span-5">
       <slot />
   </div>
 </div>
