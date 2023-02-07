@@ -2,4 +2,4 @@
     import "../../../src/app.css";
 </script>
 
-<p class="text-3xl text-[#ffffff]">Pomodoro has been finished.</p>
+<p class="mt-5 text-xl text-gray-100">Pomodoro has been finished.</p>
