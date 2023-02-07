@@ -8,7 +8,7 @@
 
 
 <div class="grid grid-cols-12 grid-rows-12">
-  <div class="row-start-1 col-start-8 pt-8 pb-16">
+  <div class="row-start-1 col-start-8 pt-8 pb-16 z-10">
     <Navbar data={data}/>
   </div>
 
