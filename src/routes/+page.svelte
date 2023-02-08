@@ -12,13 +12,12 @@
   <hr>
   {#if $timerState === TimerState.Started}
     <InProgressMenu />
-  {:else if $timerState === TimerState.Finished}
-    <FinishMenu />
-    <SetDuration />
   {:else}
     <SetDuration />
   {/if}
   <StartStopButton />
-
+  {#if $timerState === TimerState.Finished}
+    <FinishMenu />
+  {/if}
 </div>
 

@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"jsonwebtoken": "^9.0.0"
+		"jsonwebtoken": "^9.0.0",
+		"svelte-hero-icons": "^4.1.3"
 	}
 }

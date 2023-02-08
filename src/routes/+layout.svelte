@@ -8,11 +8,11 @@
 
 
 <div class="grid grid-cols-12 grid-rows-12">
-  <div class="row-start-1 col-start-8 pt-8 pb-16">
+  <div class="row-start-1 col-start-8 pt-8 pb-16 z-10">
     <Navbar data={data}/>
   </div>
 
-  <div class="row-start-2 col-start-2 col-span-10 bg-gray-700 p-5 rounded">
+  <div class="row-start-2  bg-gray-700 p-5 rounded col-start-2 col-span-10 sm:col-start-4 sm:col-span-5 max-w-sm md:col-start-4 lg:col-start-6">
       <slot />
   </div>
 </div>
