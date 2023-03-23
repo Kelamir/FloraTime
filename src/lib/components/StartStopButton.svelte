@@ -1,6 +1,7 @@
 <script>
 	import { TimerState } from "$lib/types";
-  import { timerState } from "../../stores.ts";
+	import { pomCount } from "../../stores";
+  import { timerState } from "../../stores";
 
   function handleClick() {
     switch ($timerState) {
@@ -9,6 +10,7 @@
         break;
       case TimerState.Started:
         $timerState = TimerState.Finished;
+        $pomCount += 1;
         break;
       case TimerState.Finished:
         $timerState = TimerState.Started;

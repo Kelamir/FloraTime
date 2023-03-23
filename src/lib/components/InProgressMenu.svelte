@@ -1,5 +1,5 @@
 <script>
-  import { inputMinutes, timerState } from "../../stores";
+  import { inputMinutes, pomCount, timerState } from "../../stores";
 	import { formatTimeRemaining, nextState, shouldFinish } from "../utils/countdown";
   import { onDestroy } from "svelte";
 
@@ -12,6 +12,7 @@
     timeRemaining = endTime - current;
     if(shouldFinish(timeRemaining)) {
       $timerState = nextState($timerState);
+      $pomCount += 1;
     }
   }, 1000);
 
