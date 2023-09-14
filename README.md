@@ -1,4 +1,5 @@
 # FloraTime
+![image](https://github.com/Kelamir/FloraTime/assets/61295121/ca844ae5-4ae0-41ac-afe5-26173f645855)
 
 A pomodoro app that allows you to grow flowers as you get work done.
 
